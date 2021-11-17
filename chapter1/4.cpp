@@ -11,10 +11,11 @@ const int fibonachi_number(const int& number) {
 }
 
 int main() {
-    int N = 0;
-    std::cin>>N;
-    const int f = fibonachi_number(N);
-    std::cout << f << std::endl;
+    int n = 0;
+    std::cout << "Enter index fibonachi number" << std::endl;
+    std::cin>>n;
+    const int number = fibonachi_number(n);
+    std::cout << number << std::endl;
 
     return EXIT_SUCCESS;
 }

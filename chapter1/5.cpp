@@ -1,5 +1,5 @@
 /*
-Task 5: Write the program, that calculates the binomial coefficient. Check user input. .
+Task 5: Write the program, that calculates the binomial coefficient. Check user input.
 */
 #include <iostream>
 
@@ -23,11 +23,12 @@ bool is_lower_binominal_coefficient_more_than_zero(const int& lower_binominal_co
 
 int main() {
     int n = 0;
+    std::cout << "Enter lower binominal coefficient" << std::endl;
     std::cin >> n;
     if (!is_lower_binominal_coefficient_more_than_zero(n)){
         return EXIT_FAILURE;
     }
-    for (int k = 0; k <= n; k++) {
+    for (auto k = 0; k <= n; k++) {
         std::cout << binominal(n, k) << std::endl;
     }
     return EXIT_SUCCESS;

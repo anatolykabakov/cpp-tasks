@@ -4,9 +4,10 @@ Task 3: Write the program, which writes to console numbers, when devided by 4, g
 #include <iostream>
 
 int main() {
-    int N = 0;
-    std::cin>>N;
-    for (int i=0; i<=N + 1; i++) {
+    int n = 0;
+    std::cout << "Enter amount of numbers" << std::endl;
+    std::cin>>n;
+    for (int i=0; i<=n + 1; i++) {
         std::cout << 4 * i + 3 << std::endl;
     }
     return EXIT_SUCCESS;

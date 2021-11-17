@@ -8,8 +8,8 @@ const bool is_odd_number(const int& number) {
 }
 
 int main() {
-    const int N = 10;
-    for (int i=0; i<=N; i++) {
+    const int n = 10;
+    for (int i=0; i<=n; i++) {
         if (is_odd_number(i))
           std::cout << i << std::endl;
     }
