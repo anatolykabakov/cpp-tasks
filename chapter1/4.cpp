@@ -3,7 +3,7 @@ Task 4: Write the program, which writes to console fibonachi numbers.
 */
 #include <iostream>
 
-const int fibonachi_number(const int& number) {
+int fibonachi_number(const int& number) {
     if (number == 1 || number == 0) {
         return 1;
     }
@@ -14,7 +14,7 @@ int main() {
     int n = 0;
     std::cout << "Enter index fibonachi number" << std::endl;
     std::cin>>n;
-    const int number = fibonachi_number(n);
+    int number = fibonachi_number(n);
     std::cout << number << std::endl;
 
     return EXIT_SUCCESS;

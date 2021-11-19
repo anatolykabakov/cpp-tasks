@@ -3,7 +3,7 @@ Task 8: Write the program, that convert fathom to meters.
 */
 #include <iostream>
 
-double convert_fathom_to_meters(int fathom) {
+double convert_fathom_to_meters(const int& fathom) {
     const double fathom_to_meters_coeff = 2.16;
     return fathom * fathom_to_meters_coeff;
 }

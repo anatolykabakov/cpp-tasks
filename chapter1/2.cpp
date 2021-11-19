@@ -3,7 +3,7 @@ Task 2: Write the program, which writes to console the first five odd numbers.
 */
 #include <iostream>
 
-const bool is_odd_number(const int& number) {
+bool is_odd_number(const int& number) {
     return number % 2;
 }
 

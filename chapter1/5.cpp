@@ -3,14 +3,14 @@ Task 5: Write the program, that calculates the binomial coefficient. Check user 
 */
 #include <iostream>
 
-const int factorial(const int& number) {
+int factorial(const int& number) {
     if (number == 0) {
         return 1;
     }
     return factorial(number - 1) * number;
 }
 
-const int binominal(const int& n, const int& k) {
+int binominal(const int& n, const int& k) {
     return factorial(n) / (factorial(k) * factorial(n - k));
 }
 
