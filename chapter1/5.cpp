@@ -3,18 +3,18 @@ Task 5: Write the program, that calculates the binomial coefficient. Check user 
 */
 #include <iostream>
 
-int factorial(const int& number) {
+int factorial(int number) {
     if (number == 0) {
         return 1;
     }
     return factorial(number - 1) * number;
 }
 
-int binominal(const int& n, const int& k) {
+int binominal(int n, int k) {
     return factorial(n) / (factorial(k) * factorial(n - k));
 }
 
-bool is_lower_binominal_coefficient_more_than_zero(const int& lower_binominal_coefficient) {
+bool is_lower_binominal_coefficient_more_than_zero(int lower_binominal_coefficient) {
     if (lower_binominal_coefficient <= 0) {
         return false;
     }

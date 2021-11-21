@@ -3,7 +3,7 @@ Task 6: Write the program, that convert kilometers to miles.
 */
 #include <iostream>
 
-double convert_kilometers_to_miles(const double& kilometers) {
+double convert_kilometers_to_miles(double kilometers) {
     const double kilometers_to_miles_coeff = 1.609;
     return kilometers * kilometers_to_miles_coeff;
 }

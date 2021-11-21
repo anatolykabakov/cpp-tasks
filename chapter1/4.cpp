@@ -3,7 +3,7 @@ Task 4: Write the program, which writes to console fibonachi numbers.
 */
 #include <iostream>
 
-int fibonachi_number(const int& number) {
+int fibonachi_number(int number) {
     if (number == 1 || number == 0) {
         return 1;
     }
