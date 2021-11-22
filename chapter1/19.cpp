@@ -6,7 +6,7 @@ get the value of index. Elements with odd indices get the value of square of ind
 #include <limits>
 #include <cmath> 
 
-bool is_number_odd(unsigned int number) {
+bool is_number_odd(const unsigned int number) {
     return number % 2;
 }
 

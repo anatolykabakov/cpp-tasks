@@ -4,11 +4,11 @@ Task 14: Write the program, that creates фт array and fill in even natural num
 #include <iostream>
 #include <limits>
 
-bool is_number_even(int number) {
+bool is_number_even(const int number) {
     return number % 2;
 }
 
-bool is_number_greater_zero(int number) {
+bool is_number_greater_zero(const int number) {
     return number > 0;
 }
 

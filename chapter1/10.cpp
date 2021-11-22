@@ -4,7 +4,7 @@ Task 10: Write the program to convert km/h to m/sec.
 #include <iostream>
 const double kmh_to_meters_per_seconds = 0.277778;
 
-double convert_velocity_kmh_to_ms(double velocity_kmh) {
+double convert_velocity_kmh_to_ms(const double velocity_kmh) {
     return velocity_kmh * kmh_to_meters_per_seconds;
 }
 

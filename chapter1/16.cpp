@@ -5,11 +5,11 @@ Task 16: Write the program, that creates an array and fill in squares of natural
 #include <limits>
 #include <cmath> 
 
-bool is_number_odd(unsigned int number) {
+bool is_number_odd(const unsigned int number) {
     return number % 2;
 }
 
-bool is_number_greater_zero(int number) {
+bool is_number_greater_zero(const int number) {
     return number > 0;
 }
 

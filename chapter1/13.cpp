@@ -4,11 +4,11 @@ Task 13: Write the program, which calculates the sum of odd natural numbers.
 #include <iostream>
 #include <limits>
 
-bool is_number_odd(unsigned int number) {
+bool is_number_odd(const unsigned int number) {
     return number % 2 != 0;
 }
 
-bool is_number_greater_zero(int number) {
+bool is_number_greater_zero(const int number) {
     return number > 0;
 }
 
