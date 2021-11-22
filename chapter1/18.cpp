@@ -3,7 +3,7 @@ Task 18: Write the program, which writes fibonachi numbers to array.
 */
 #include <iostream>
 
-int fibonachi_number(const int number) {
+long long fibonachi_number(const long long number) {
     if (number == 1 || number == 0) {
         return 1;
     }

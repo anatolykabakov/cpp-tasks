@@ -2,6 +2,8 @@
 Task 5: Write the program, that calculates the binomial coefficient. Check user input. .
 */
 #include <iostream>
+#include <stdexcept>
+
 
 long long factorial(const long long number) {
     if (number == 0) {
@@ -26,7 +28,7 @@ int main() {
     std::cout << "Enter lower binominal coefficient" << std::endl;
     std::cin >> number;
     if (!is_coefficient_valid(number)){
-        return EXIT_FAILURE;
+        throw std::invalid_argument("recieved negative value");
     }
     for (auto n = 0; n <= number; n++) {
       for (auto k = 0; k <= n; k++) {
