@@ -3,7 +3,7 @@ Task 5: Write the program, that calculates the binomial coefficient. Check user 
 */
 #include <iostream>
 
-int factorial(const int number) {
+long long factorial(const long long number) {
     if (number == 0) {
         return 1;
     }
