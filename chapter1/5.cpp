@@ -17,10 +17,7 @@ int binominal(const int n, const int k) {
 }
 
 bool is_coefficient_valid(const int lower_binominal_coefficient) {
-    if (lower_binominal_coefficient <= 0) {
-        return false;
-    }
-    return true;
+    return lower_binominal_coefficient >= 0;
 }
 
 int main() {

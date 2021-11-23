@@ -15,11 +15,11 @@ int main() {
     std::cout << "Enter index fibonachi number" << std::endl;
     std::cin>>n;
     int k = 0;
-    while (k<=n) {
+    while (k<n) {
         int number = fibonachi_number(k);
         std::cout << number << " ";
-        
         k++;
+        
     }
     return EXIT_SUCCESS;
 }
