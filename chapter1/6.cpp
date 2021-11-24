@@ -2,10 +2,10 @@
 Task 6: Write the program, that convert kilometers to miles.
 */
 #include <iostream>
+constexpr double KILOMETERS_TO_MILES_COEFF = 0.6214;
 
 double convert_kilometers_to_miles(const double kilometers) {
-    const double kilometers_to_miles_coeff = 1.609;
-    return kilometers * kilometers_to_miles_coeff;
+    return kilometers * KILOMETERS_TO_MILES_COEFF;
 }
 
 int main() {
@@ -14,4 +14,5 @@ int main() {
     std::cin >> kilometers;
     auto miles = convert_kilometers_to_miles(kilometers);
     std::cout << "Miles: " << miles;
+    return EXIT_SUCCESS;
 }

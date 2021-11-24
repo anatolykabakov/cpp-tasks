@@ -21,5 +21,5 @@ int main() {
     }
     for (int i=0; i<6; i++)
         std::cout << arr[i] << " ";
-    return 0;
+    return EXIT_SUCCESS;
 }

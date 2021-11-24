@@ -35,5 +35,5 @@ int main() {
             
     }
     std::cout << sum;
-    return 0;
+    return EXIT_SUCCESS;
 }

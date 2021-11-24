@@ -2,10 +2,10 @@
 Task 8: Write the program, that convert fathom to meters.
 */
 #include <iostream>
+const double FATHOM_TO_METERS_COEFF = 2.16;
 
 double convert_fathom_to_meters(const int fathom) {
-    const double fathom_to_meters_coeff = 2.16;
-    return fathom * fathom_to_meters_coeff;
+    return fathom * FATHOM_TO_METERS_COEFF;
 }
 
 int main() {
@@ -14,4 +14,5 @@ int main() {
     std::cin >> fathom;
     auto meters = convert_fathom_to_meters(fathom);
     std::cout << "Fathom -> meters: " << meters << std::endl;
+    return EXIT_SUCCESS;
 }

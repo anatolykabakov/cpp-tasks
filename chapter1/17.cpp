@@ -32,11 +32,9 @@ int main() {
             continue;
         }
         arr[i] = pow(2, number);
-        
-            
     }
     for (int i=0; i<5; i++)
         if (arr[i]>0)
           std::cout << arr[i] << " ";
-    return 0;
+    return EXIT_SUCCESS;
 }

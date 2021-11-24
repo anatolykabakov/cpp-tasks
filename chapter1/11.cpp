@@ -16,5 +16,5 @@ int main() {
     
     std::cout <<  convert_velocity_ms_to_kmh(velocity);
     
-    return 0;
+    return EXIT_SUCCESS;
 }

@@ -18,8 +18,7 @@ int main() {
     while (k<n) {
         int number = fibonachi_number(k);
         std::cout << number << " ";
-        k++;
-        
+        k++; 
     }
     return EXIT_SUCCESS;
 }

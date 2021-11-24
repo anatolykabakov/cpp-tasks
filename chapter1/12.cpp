@@ -14,5 +14,5 @@ int main() {
         sum+=number;
     }
     std::cout << sum;
-    return 0;
+    return EXIT_SUCCESS;
 }
