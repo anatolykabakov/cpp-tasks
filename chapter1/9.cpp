@@ -2,6 +2,7 @@
 Task 9: Write a program to convert the distance given by fathom and arshins..
 */
 #include <iostream>
+#include <cmath>
 
 constexpr double FATHOM_TO_METERS = 2.16;
 constexpr double METERS_TO_CENTIMETERS = 100;
@@ -15,17 +16,14 @@ int main() {
     std::cout << "Enter fathoms" << std::endl;
     std::cin>>fathoms;
     
-    auto fathom_meters = fathoms * FATHOM_TO_METERS;
-    auto fathom_centimeters = fathom_meters * METERS_TO_CENTIMETERS;
-    
-    std::cout << "Contain " << fathom_meters << "meters, and " << fathom_centimeters << " centimeters" << std::endl;
-    
     std::cout << "Enter arshins" << std::endl;
     std::cin>>arshins;
     
+    auto fathom_meters = fathoms * FATHOM_TO_METERS;
     auto arshins_meters = arshins * (FATHOM_TO_METERS / FATHOM_TO_ARSHINS);
-    auto arshins_centimeters = arshins_meters * METERS_TO_CENTIMETERS;
-    
-    std::cout << "Contain " << arshins_meters << "meters, and " << arshins_centimeters << " centimeters" << std::endl;
+    auto distance = fathom_meters + arshins_meters;
+    double whole=0, fractional=0;
+    fractional = std::modf(distance, &whole);
+    std::cout << "Distance "<< whole << " meters, " << fractional * METERS_TO_CENTIMETERS << " centimeters";
     return EXIT_SUCCESS;
 }
