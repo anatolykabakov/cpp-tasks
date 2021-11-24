@@ -14,6 +14,5 @@ int main() {
     std::cin>>velocity;
     
     std::cout <<  convert_velocity_kmh_to_ms(velocity);
-    
     return EXIT_SUCCESS;
 }
