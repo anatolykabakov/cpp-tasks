@@ -13,7 +13,6 @@ bool is_number_greater_zero(const int number) {
 }
 
 int main() {
-    
     std::cout << "Enter 5 natural numbers(more than zero 1 2 3 4 ..)" << std::endl;
     unsigned short arr[5] = {0,0,0,0,0};
     for (int i=0; i<5; i++) {
@@ -30,13 +29,14 @@ int main() {
             std::cout << "value less than one" << std::endl;
             continue;
         }
-        if (is_number_even(number))
+        if (is_number_even(number)) {
             arr[i] = number;
-        
-            
+        }
     }
-    for (int i=0; i<5; i++)
-        if (arr[i]>0)
+    for (int i=0; i<5; i++) {
+        if (arr[i]>0) {
           std::cout << arr[i];
+        }
+    }
     return EXIT_SUCCESS;
 }

@@ -19,11 +19,11 @@ int main() {
     std::cout << "Enter arshins" << std::endl;
     std::cin>>arshins;
     
-    auto fathom_meters = fathoms * FATHOM_TO_METERS;
-    auto arshins_meters = arshins * (FATHOM_TO_METERS / FATHOM_TO_ARSHINS);
-    auto distance = fathom_meters + arshins_meters;
-    double whole=0, fractional=0;
-    fractional = std::modf(distance, &whole);
-    std::cout << "Distance "<< whole << " meters, " << fractional * METERS_TO_CENTIMETERS << " centimeters";
+    const auto fathom_meters = fathoms * FATHOM_TO_METERS;
+    const auto arshins_meters = arshins * (FATHOM_TO_METERS / FATHOM_TO_ARSHINS);
+    const auto distance = fathom_meters + arshins_meters;
+    double distance_integral_part = 0;
+    const double distance_fractional_part = std::modf(distance, &distance_integral_part);
+    std::cout << "Distance "<< distance_integral_part << " meters, " << distance_fractional_part * METERS_TO_CENTIMETERS << " centimeters";
     return EXIT_SUCCESS;
 }

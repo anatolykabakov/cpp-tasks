@@ -19,7 +19,8 @@ int main() {
             arr[i] = i;
         }
     }
-    for (int i=0; i<6; i++)
+    for (int i=0; i<6; i++) {
         std::cout << arr[i] << " ";
+    }
     return EXIT_SUCCESS;
 }

@@ -5,7 +5,7 @@ Task 13: Write the program, which calculates the sum of odd natural numbers.
 #include <limits>
 
 bool is_number_odd(const unsigned int number) {
-    return number % 2 != 0;
+    return number % 2;
 }
 
 bool is_number_greater_zero(const int number) {
@@ -13,7 +13,6 @@ bool is_number_greater_zero(const int number) {
 }
 
 int main() {
-    
     std::cout << "Enter 10 natural numbers(more than zero 1 2 3 4 ..)" << std::endl;
     unsigned int sum = 0;
     for (int i=0; i<10; i++) {
@@ -30,9 +29,9 @@ int main() {
             std::cout << "value less than zero" << std::endl;
             continue;
         }
-        if (is_number_odd(number))
-            sum+=number;
-            
+        if (is_number_odd(number)) {
+            sum += number;
+        }
     }
     std::cout << sum;
     return EXIT_SUCCESS;
