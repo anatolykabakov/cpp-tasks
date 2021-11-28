@@ -1,5 +1,5 @@
 /*
-Task 14: Write the program, that creates фт array and fill in even natural numbers.
+Task 14: Write the program, that creates an array and fill in even natural numbers.
 */
 #include <iostream>
 #include <limits>
