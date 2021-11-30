@@ -10,6 +10,14 @@ long long fibonachi_number(const long long number) {
     return fibonachi_number(number - 2) + fibonachi_number(number- 1);
 }
 
+void print_array(const unsigned int *array, const int size) {
+    for (int i=0; i < size; i++) {
+        if (array[i] != 0) {
+            std::cout << array[i] << " ";
+        }
+    }
+}
+
 int main() {
     int n = 0;
     std::cout << "Enter size fibonachi numbers array" << std::endl;
@@ -19,8 +27,7 @@ int main() {
         int number = fibonachi_number(i);
         fibonachi_array[i] = number;
     }
-    for (int i=0; i<n; i++) {
-        std::cout << fibonachi_array[i] << " ";
-    }
+
+    print_array(fibonachi_array, n);
     return EXIT_SUCCESS;
 }

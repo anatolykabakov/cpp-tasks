@@ -4,6 +4,7 @@ Task 17: Write the program, that creates an array and fill in power of 2.
 #include <iostream>
 #include <limits>
 #include <cmath> 
+constexpr int ARRAY_SIZE = 5;
 
 bool is_number_odd(const unsigned int number) {
     return number % 2;
@@ -11,6 +12,14 @@ bool is_number_odd(const unsigned int number) {
 
 bool is_number_greater_zero(const int number) {
     return number > 0;
+}
+
+void print_array(const unsigned short *array, const int size) {
+    for (int i=0; i < size; i++) {
+        if (array[i] != 0) {
+            std::cout << array[i] << " ";
+        }
+    }
 }
 
 int main() {
@@ -32,10 +41,6 @@ int main() {
         }
         arr[i] = pow(2, number);
     }
-    for (int i=0; i<5; i++) {
-        if (arr[i]>0) {
-          std::cout << arr[i] << " ";
-        }
-    }
+    print_array(arr, ARRAY_SIZE);
     return EXIT_SUCCESS;
 }

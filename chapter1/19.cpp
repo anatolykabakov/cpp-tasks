@@ -5,22 +5,29 @@ get the value of index. Elements with odd indices get the value of square of ind
 #include <iostream>
 #include <limits>
 #include <cmath> 
+constexpr int ARRAY_SIZE = 5;
 
 bool is_number_odd(const unsigned int number) {
     return number % 2;
 }
 
+void print_array(const unsigned short *array, const int size) {
+    for (int i=0; i < size; i++) {
+        if (array[i] != 0) {
+            std::cout << array[i] << " ";
+        }
+    }
+}
+
 int main() {
-    unsigned short arr[6] = {0,0,0,0,0,0};
-    for (int i=0; i<6; i++) {
+    unsigned short arr[ARRAY_SIZE] = {0,0,0,0,0};
+    for (int i=0; i<ARRAY_SIZE; i++) {
         if (is_number_odd(i)) {
             arr[i] = pow(i, 2);
         } else {
             arr[i] = i;
         }
     }
-    for (int i=0; i<6; i++) {
-        std::cout << arr[i] << " ";
-    }
+    print_array(arr, ARRAY_SIZE);
     return EXIT_SUCCESS;
 }
