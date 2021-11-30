@@ -15,7 +15,7 @@ bool is_number_greater_zero(const int number) {
 }
 
 void print_array(const unsigned short *array, const int size) {
-    for (int i=0; i <= size; i++) {
+    for (int i=0; i < size; i++) {
         if (array[i] != 0) {
             std::cout << array[i] << " ";
         }
