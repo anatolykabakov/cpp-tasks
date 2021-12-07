@@ -5,6 +5,7 @@ Task 13: Write the program, which calculates the sum of odd natural numbers.
 #include <iostream>
 #include <climits>
 #include <stdexcept>
+#include <string>
 
 bool is_number_odd(const unsigned int number) {
     return number % 2;
@@ -20,9 +21,8 @@ int main() {
     unsigned long long sum=0;
     std::cin >> number;
     for (unsigned int i=0; i <= number; i++) {
-        std::cout << sum << " " << i << " " << check_overflow(sum, i) << std::endl;
         if (check_overflow(sum, i)) {
-            throw std::overflow_error("Sum more than 4294967295."); 
+            throw std::overflow_error("Sum more than " + std::to_string(UINT_MAX)); 
         }
         if (is_number_odd(i)) {
             sum += i;

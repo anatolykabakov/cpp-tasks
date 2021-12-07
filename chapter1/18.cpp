@@ -20,9 +20,9 @@ void print_array(const unsigned int *array, const int size) {
 
 int main() {
     int n = 0;
-    std::cout << "Enter size fibonachi numbers array" << std::endl;
+    std::cout << "Enter size fibonachi numbers array." << std::endl;
     std::cin>>n;
-    unsigned int fibonachi_array[n];
+    unsigned int fibonachi_array[n] = {0};
     for (int i =0; i<n; i++) {
         int number = fibonachi_number(i);
         fibonachi_array[i] = number;

@@ -24,8 +24,8 @@ void print_array(const unsigned short *array, const int size) {
 
 int main() {
     std::cout << "Enter 5 natural numbers(more than zero 1 2 3 4 ..)" << std::endl;
-    unsigned short arr[5] = {0,0,0,0,0};
-    for (int i=0; i<5; i++) {
+    unsigned short arr[ARRAY_SIZE] = {0};
+    for (int i=0; i<ARRAY_SIZE; i++) {
         int number = 0;
         std::istream& stream = std::cin.operator >> (number);
         bool is_number_integer = !stream.fail();
@@ -36,7 +36,8 @@ int main() {
             continue;
         }
         if (!is_number_greater_zero(number)) {
-            std::cout << "value less than one" << std::endl;
+             i--;
+            std::cout << "Please enter unsigned int number." << std::endl;
             continue;
         }
         arr[i] = pow(2, number);

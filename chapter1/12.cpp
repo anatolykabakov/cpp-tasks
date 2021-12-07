@@ -6,8 +6,8 @@ Task 12: Write the program, which calculates the sum of natural numbers.
 #include <stdexcept>
 #include <string> 
 
-bool check_overflow(const unsigned a, const unsigned b) {
-    return a > UINT_MAX - b;
+bool check_sum_overflow(const unsigned long long sum, const unsigned int b) {
+    return sum > ULLONG_MAX - b;
 }
 
 int main() {
@@ -16,8 +16,8 @@ int main() {
     unsigned long long sum=0;
     std::cin >> number;
     for (unsigned int i=0; i <= number; i++) {
-        if (check_overflow(sum, i)) {
-            throw std::overflow_error("Sum more than " + std::to_string(UINT_MAX)); 
+        if (check_sum_overflow(sum, i)) {
+            throw std::overflow_error("Sum more than " + std::to_string(ULLONG_MAX)); 
         }
         sum += i;
     }

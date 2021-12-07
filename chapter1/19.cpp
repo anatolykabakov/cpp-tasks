@@ -20,7 +20,7 @@ void print_array(const unsigned short *array, const int size) {
 }
 
 int main() {
-    unsigned short arr[ARRAY_SIZE] = {0,0,0,0,0};
+    unsigned short arr[ARRAY_SIZE] = {0};
     for (int i=0; i<ARRAY_SIZE; i++) {
         if (is_number_odd(i)) {
             arr[i] = pow(i, 2);
