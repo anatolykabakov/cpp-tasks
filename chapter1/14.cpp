@@ -31,6 +31,7 @@ int main() {
             std::cout << "non-integer value" << std::endl;
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            i--;
             continue;
         }
         if (!is_number_greater_zero(number) || !is_number_even(number)) {

@@ -13,9 +13,7 @@ bool is_number_odd(const unsigned int number) {
 
 void print_array(const unsigned short *array, const int size) {
     for (int i=0; i < size; i++) {
-        if (array[i] != 0) {
-            std::cout << array[i] << " ";
-        }
+        std::cout << array[i] << " ";
     }
 }
 
