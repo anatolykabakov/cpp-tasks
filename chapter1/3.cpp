@@ -1,5 +1,5 @@
 /*
-Task 3: Write the program, which writes to console numbers, when devided by 4, give the remainded 3.
+Task 3: Write the program, which writes to console numbers, when divided by 4, give the remainded 3.
 */
 #include <iostream>
 

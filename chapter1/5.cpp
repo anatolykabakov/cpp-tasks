@@ -25,7 +25,7 @@ int main() {
     std::cout << "Enter lower binominal coefficient" << std::endl;
     std::cin >> number;
     if (!is_coefficient_valid(number)){
-        throw std::invalid_argument("recieved negative value");
+        throw std::invalid_argument("received negative value");
     }
     for (auto n = 0; n <= number; n++) {
       for (auto k = 0; k <= n; k++) {
