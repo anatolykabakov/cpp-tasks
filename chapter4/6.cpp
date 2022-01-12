@@ -8,22 +8,21 @@ It is neccesary using recursion in function.
 #include <iostream>
 #include <cmath>
 
-long long factorial(const long long number) {
+double factorial(const double number) {
     if (number == 0) {
         return 1;
     }
     return factorial(number - 1) * number;
 }
 
-long long exp(long long x, long long n) {
+double exp(const double x, const double n) {
   if (n == 0) {
     return 1;
   }
-  long long  result = std::pow(x, n) / factorial(n) + exp(x, n - 1);
-  return result;
+  return exp(x, n - 1) + std::pow(x, n) / factorial(n);
 }
 
 int main() {
-  std::cout << exp(1, 10) << " " << std::exp(1);
+  std::cout << exp(1.2, 10) << " " << std::exp(1.2);
   return EXIT_SUCCESS;
 }
