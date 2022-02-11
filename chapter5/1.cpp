@@ -15,6 +15,18 @@ public:
     return width_ * height_ * depth_;
   }
 
+  double get_width() const {
+    return width_;
+  }
+
+  double get_height() const {
+    return height_;
+  }
+
+  double get_depth() const {
+    return depth_;
+  }
+
   void show_parameters() {
     std::cout << "Width is " << width_ << std::endl;
     std::cout << "Height is " << height_ << std::endl;
@@ -46,9 +58,23 @@ public:
       return mass_ / get_volume();
     }
 
+    double get_mass() const {
+      return mass_;
+    }
+
     ParalelepipedExtended& operator -=(const double mass) {
       mass_ -= mass;
     }
+
+    ParalelepipedExtended operator+(const ParalelepipedExtended& obj) {
+      ParalelepipedExtended tmp(
+        get_width() + obj.get_width(), 
+        get_height() + obj.get_height(), 
+        get_depth() + obj.get_depth(),
+        mass_ + obj.get_mass());
+
+      return tmp;
+    } 
 private:
   double mass_{0};
 };
@@ -64,5 +90,9 @@ int main() {
 
   paralelepiped_extended -= 2.0;
   paralelepiped_extended.show_mass();
+
+  ParalelepipedExtended paralelepiped_extended2(40, 50, 60, 70);
+  auto p = paralelepiped_extended + paralelepiped_extended2;
+  p.show_parameters();
   return 0;
 }
