@@ -38,9 +38,9 @@ public:
   }
 
   ComplexNumber operator/(const ComplexNumber& obj) {
-    const double a=((x_ * obj.get_real()) + (y_ * obj.get_immediance())) / (std::pow(obj.get_real(), 2) + std::pow(obj.get_immediance(), 2));
-    const double b=((obj.get_real() * y_) - (x_ * obj.get_immediance())) / (std::pow(obj.get_real(), 2) + std::pow(obj.get_immediance(), 2));
-    return *this;
+    const double re=((x_ * obj.get_real()) + (y_ * obj.get_immediance())) / (std::pow(obj.get_real(), 2) + std::pow(obj.get_immediance(), 2));
+    const double im=((obj.get_real() * y_) - (x_ * obj.get_immediance())) / (std::pow(obj.get_real(), 2) + std::pow(obj.get_immediance(), 2));
+    return ComplexNumber(re, im);
   }
 
   friend std::ostream& operator<<(std::ostream &os, const ComplexNumber &number);
