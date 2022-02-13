@@ -1,3 +1,7 @@
+/*
+Chapter 5, task 1.
+Description: TODO
+*/
 #include <iostream>
 
 class Parralelepiped {
@@ -33,7 +37,7 @@ public:
     std::cout << "Depth is " << depth_ << std::endl;
   }
   
-private:
+protected:
   double width_{0};
   double height_{0};
   double depth_{0};
@@ -68,11 +72,10 @@ public:
 
     ParalelepipedExtended operator+(const ParalelepipedExtended& obj) {
       ParalelepipedExtended tmp(
-        get_width() + obj.get_width(), 
-        get_height() + obj.get_height(), 
-        get_depth() + obj.get_depth(),
+        width_ + obj.get_width(), 
+        height_ + obj.get_height(), 
+        depth_ + obj.get_depth(),
         mass_ + obj.get_mass());
-
       return tmp;
     } 
 private:
