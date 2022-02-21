@@ -10,15 +10,15 @@ for both parts, but percentage rate for each patt is different.
 #include <string>
 #include <cstring>
 
-class Money {
+class Deposit {
 public:
   
-  Money(char * name,
-        double money,
+  Deposit(char * name,
+        double deposit,
         double rate,
         unsigned int time):
         name_( new char[std::strlen(name) + 1]),
-        money_(money),
+        deposit_(deposit),
         rate_(rate),
         time_(time)
          {
@@ -26,47 +26,62 @@ public:
            std::cout << __func__ << std::endl;
   }
 
-  ~Money() {
+  ~Deposit() {
     delete [] name_;
     std::cout << __func__ << std::endl;
   }
 
-  Money(const Money &money):
-    name_( new char[std::strlen(money.name_) + 1]),
-    money_(money.money_),
-    rate_(money.rate_),
-    time_(money.time_) {
-      std::cout << "Money(const Money &money)" << std::endl;
-      std::strcpy(name_, money.name_);
+  Deposit(const Deposit &deposit):
+    name_( new char[std::strlen(deposit.name_) + 1]),
+    deposit_(deposit.deposit_),
+    rate_(deposit.rate_),
+    time_(deposit.time_) {
+      std::cout << "Deposit(const Deposit &deposit)" << std::endl;
+      std::strcpy(name_, deposit.name_);
   }
 
-  Money& operator=(const Money &money) {
-    std::cout << "Money& operator=(const Money &money)" << std::endl;
-    if (this != &money) {
-      Money copy(money);
+  Deposit& operator=(const Deposit &deposit) {
+    std::cout << "Deposit& operator=(const Deposit &deposit)" << std::endl;
+    if (this != &deposit) {
+      Deposit copy(deposit);
       std::swap(*this, copy);
     }
     return *this;
   }
 
-  Money (Money &&money) {
-    std::cout << "Money (Money &&money)" << std::endl;
-    name_ = new char[std::strlen(money.name_) + 1];
-    rate_ = money.rate_;
-    time_ = money.time_;
-    std::strcpy(name_, money.name_);
-    money.name_ = nullptr;
-    money.rate_ = 0;
+  Deposit (Deposit &&deposit) {
+    std::cout << "Deposit (Deposit &&deposit)" << std::endl;
+    name_ = new char[std::strlen(deposit.name_) + 1];
+    rate_ = deposit.rate_;
+    time_ = deposit.time_;
+    std::strcpy(name_, deposit.name_);
+    deposit.name_ = nullptr;
+    deposit.rate_ = 0;
   }
 
-  Money& operator=(Money &&money) {
-    std::cout << "Money& operator=(Money &&money)" << std::endl;
-    std::swap(name_, money.name_);
+  Deposit& operator=(Deposit &&deposit) {
+    std::cout << "Deposit& operator=(Deposit &&deposit)" << std::endl;
+    std::swap(name_, deposit.name_);
     return *this;
   }
 
-  double get_money() const {
-    return money_;
+  double calculate_deposit(double tmp) {
+    for (int k=1; k<=time_; k++) {
+      tmp *= (1 + rate_) / 100;
+    }
+    return tmp;
+  }
+  
+  void show_all() {
+    std::cout << "Name: " << name_ << std::endl;
+    std::cout << "Deposit: " << name_ << std::endl;
+    std::cout << "Deposit rate: " << rate_ << std::endl;
+    std::cout << "Period: " << time_ << std::endl;
+    std::cout << "Total amount: " << calculate_deposit(deposit_) << std::endl;
+  }
+
+  double get_deposit() const {
+    return deposit_;
   }
 
   double get_rate() const {
@@ -83,24 +98,26 @@ public:
 
 private:
   char * name_;
-  double money_;
+  double deposit_;
   double rate_;
   unsigned int time_;
 
 };
 
-void by_reference(Money &money) {
+void by_reference(Deposit &Deposit) {
 }
 
-void by_value(Money money) {
+void by_value(Deposit Deposit) {
 }
 
 int main() {
-  Money my_money = Money("anatoly", 100, 10, 12);
-  Money p1 = my_money;
-  Money p2(my_money);
-  by_value(std::move(p2));
-  by_reference(p2);
-  auto p3 = std::move(my_money);
+  Deposit my_deposit = Deposit("anatoly", 100, 10, 12);
+  my_deposit.show_all();
+  // Deposit p1("petya", 100, 10, 12);
+  // p1 = my_Deposit;
+  // Deposit p2(my_Deposit);
+  // by_value(std::move(p2));
+  // by_reference(p2);
+  // auto p3 = std::move(my_Deposit);
   return 0;
 }

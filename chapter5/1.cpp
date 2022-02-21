@@ -1,6 +1,14 @@
 /*
 Chapter 5, task 1.
-Description: TODO
+Description: Write the program, which creates the class to describe a physical object the parallelepiped.
+Class has three parameters: width, depth and height, 
+as well as method for calculate volume(it is a multiply parameters of paralelepiped).
+Provide for the presense the constructor and method to show characteristics of parallelepiped. 
+Consider the mechanism of inheritance, by creating derivate class with additional field, 
+which describing the mass of parallelepiped. 
+
+In derived class, add method for calculate density of matherial, from which parallelepiped is maded.
+(mass must be devided on volume)
 */
 #include <iostream>
 
