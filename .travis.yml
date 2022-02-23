@@ -1,7 +1,7 @@
 dist: bionic
 sudo: required
 language: cpp
-os: 
+os:
   - linux
 compiler:
   - gcc
@@ -9,10 +9,9 @@ install:
   - sudo apt update
 script:
   - mkdir build && cd build
-  - cmake ..
+  - cmake -DBUILD_TESTS=ON ..
   - cmake --build .
   - ctest --output-on-failure
-
 # deploy:
 #     provider:     releases
 #     file:         <package-file>
