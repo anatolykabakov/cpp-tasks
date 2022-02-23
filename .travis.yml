@@ -1,0 +1,26 @@
+dist: bionic
+sudo: required
+language: cpp
+os: 
+  - linux
+compiler:
+  - gcc
+install:
+  - sudo apt update
+script:
+  - mkdir build && cd build
+  - cmake ..
+  - cmake --build .
+  - ctest --output-on-failure
+
+# deploy:
+#     provider:     releases
+#     file:         <package-file>
+#     skip_cleanup: true
+#     overwrite:    true
+
+#     api_key:
+#         secure:   <encrypted-github-token>
+
+#     on:
+#         tags:     true
