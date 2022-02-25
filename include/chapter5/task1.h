@@ -1,5 +1,6 @@
 /**
  * @date 2022-02-23
+ * @file task1.h
  * @author Anatoly Kabakov <anatoly.kabakov@mail.ru>
  * @brief Chapter 5, task 1.
  * @details Write the program, which creates the class to describe a physical
@@ -15,19 +16,22 @@
 #pragma once
 #include <iostream>
 /**
- * @brief Class discribe paralelepiped
+ * @brief Class discribe paralelepiped. Class has three parameters: width, depth and
+ * height, as well as method for calculate volume(it is a multiply parameters of
+ * paralelepiped).
  *
  */
-class Parralelepiped {
+namespace chapter5::task1 {
+class Parallelepiped {
  public:
   /**
-   * @brief Construct a new Parralelepiped object
+   * @brief Construct a new Parallelepiped object
    *
    * @param width Width of paralelepiped. [meters]
    * @param height Height of paralelepiped. [meters]
    * @param depth Depth of paralelepiped. [meters]
    */
-  Parralelepiped(const double width, const double height, const double depth)
+  Parallelepiped(const double width, const double height, const double depth)
       : width_(width), height_(height), depth_(depth) {
     std::cout << __func__ << std::endl;
   }
@@ -79,28 +83,65 @@ class Parralelepiped {
    */
   double depth_{0};
 };
-
-class ParalelepipedExtended : public Parralelepiped {
+/**
+ * @brief Class discribe paralelepiped with mass.
+ *
+ */
+class ParallelepipedExtended : public Parallelepiped {
  public:
-  ParalelepipedExtended(const double width, const double height, const double depth,
-                        const double mass)
-      : Parralelepiped(width, height, depth), mass_(mass) {
+  /**
+   * @brief Constructor for Paralelepiped Extended object.
+   *
+   * @param width Width of paralelepiped. [meters]
+   * @param height Height of paralelepiped. [meters]
+   * @param depth Depth of paralelepiped. [meters]
+   * @param mass Mass of paralelepiped. [kilograms]
+   */
+  ParallelepipedExtended(const double width, const double height, const double depth,
+                         const double mass)
+      : Parallelepiped(width, height, depth), mass_(mass) {
     std::cout << __func__ << std::endl;
   }
+  /**
+   * @brief Method for show mass of paralelepiped.
+   *
+   */
   void show_mass() const { std::cout << mass_ << std::endl; }
-
+  /**
+   * @brief Get the density of paralelepiped.
+   *
+   * @return Density of paralelepiped. [kilogram / meters^3]
+   */
   double get_density() const { return mass_ / get_volume(); }
-
+  /**
+   * @brief Get the mass of paralelepiped.
+   *
+   * @return Mass of paralelepiped. [kilograms]
+   */
   double get_mass() const { return mass_; }
-
-  ParalelepipedExtended& operator-=(const double mass) { mass_ -= mass; }
-
-  ParalelepipedExtended operator+(const ParalelepipedExtended& obj) {
-    ParalelepipedExtended tmp(width_ + obj.get_width(), height_ + obj.get_height(),
-                              depth_ + obj.get_depth(), mass_ + obj.get_mass());
+  /**
+   * @brief This operator -= substracts the mass of paralelepiped.
+   *
+   * @param mass Mass of paralelepiped, which substructed from the mass
+   * of the paralelepiped.
+   * @return ParallelepipedExtended&
+   */
+  ParallelepipedExtended& operator-=(const double mass) { mass_ -= mass; }
+  /**
+   * @brief Adds two ParallelepipedExtended objects, return an object
+   * that contains the sum of the parameters of the two paralelepipeds.
+   *
+   * @param obj Parallelepiped to be added to the this.
+   * @return New ParallelepipedExtended object,
+   * that contains sum of the paramters of the parallelepipeds.
+   */
+  ParallelepipedExtended operator+(const ParallelepipedExtended& obj) {
+    ParallelepipedExtended tmp(width_ + obj.get_width(), height_ + obj.get_height(),
+                               depth_ + obj.get_depth(), mass_ + obj.get_mass());
     return tmp;
   }
 
  private:
   double mass_{0};
 };
+}  // namespace chapter5::task1

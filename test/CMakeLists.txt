@@ -20,4 +20,4 @@ PRIVATE
   GTest::gtest
   ${CHAPTER5_LIBRARY}
 )
-add_test(NAME ${PROJECT_NAME}_test COMMAND ${PROJECT_NAME}_test)
+add_test(NAME chapter5_test COMMAND ${PROJECT_NAME}_test)
