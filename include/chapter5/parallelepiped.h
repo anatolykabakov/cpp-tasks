@@ -84,13 +84,13 @@ class Parallelepiped {
   double depth_{0};
 };
 /**
- * @brief Class discribe paralelepiped with mass.
+ * @brief Class discribe parallelepiped with mass.
  *
  */
 class ParallelepipedExtended : public Parallelepiped {
  public:
   /**
-   * @brief Constructor for Paralelepiped Extended object.
+   * @brief Constructor for Parallelepiped Extended object.
    *
    * @param width Width of paralelepiped. [meters]
    * @param height Height of paralelepiped. [meters]
@@ -142,6 +142,10 @@ class ParallelepipedExtended : public Parallelepiped {
   }
 
  private:
+  /**
+   * @brief The mass of the parallelepiped.
+   *
+   */
   double mass_{0};
 };
 }  // namespace chapter5::task1

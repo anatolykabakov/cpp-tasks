@@ -16,7 +16,7 @@ install(TARGETS ${CHAPTER5_LIBRARY} DESTINATION bin)
 set(CPACK_GENERATOR "DEB")
 set(CPACK_PACKAGE_NAME ${PACKAGE_NAME})
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Anatoly Kabakov <anatoly.kabakov@mail.ru>")
-set(CPACK_PACKAGE_DESCRIPTION "cpp tasks")
+set(CPACK_PACKAGE_DESCRIPTION "Package contain programming tasks.")
 include(CPack)
 
 if (BUILD_TESTS)

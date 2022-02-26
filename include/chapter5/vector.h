@@ -9,12 +9,20 @@
  */
 #pragma once
 #include <iostream>
-
+namespace chapter5::task3 {
+/**
+ * @brief This class describe vector and operations with it.
+ *
+ */
 class Vector2d {
  public:
+  /**
+   * @brief explicit Constructor a Vector2d object.
+   *
+   * @param x The x coordinate of vector by X axis. [meters]
+   * @param y The x coordinate of vector by Y axis. [meters]
+   */
   explicit Vector2d(const double x, const double y) : x_(x), y_(y) {}
-
-  void print() { std::cout << x_ << " " << y_ << std::endl; }
 
   Vector2d operator+(const Vector2d& obj) {
     const int x = x_ + obj.x_;
@@ -23,8 +31,8 @@ class Vector2d {
   }
 
   Vector2d operator-(const Vector2d& obj) {
-    int x = x_ - obj.x_;
-    int y = y_ - obj.y_;
+    const int x = x_ - obj.x_;
+    const int y = y_ - obj.y_;
     return Vector2d(x, y);
   }
 
@@ -43,9 +51,9 @@ class Vector2d {
     return Vector2d(x, y);
   }
 
-  double get_x() const { return x_; }
+  virtual double get_x() const { return x_; }
 
-  double get_y() const { return y_; }
+  virtual double get_y() const { return y_; }
 
  protected:
   double x_{0};
@@ -58,12 +66,12 @@ int operator-(Vector2d& vect1, Vector2d& vect2) {
   return x + y;
 }
 
-class Vector3d : protected Vector2d {
+class Vector3d : public Vector2d {
  public:
   explicit Vector3d(const double x, const double y, const double z)
       : Vector2d(x, y), z_(z) {}
 
-  void print() { std::cout << x_ << " " << y_ << " " << z_ << std::endl; }
+  double get_z() { return z_; }
 
   Vector3d operator+(const Vector3d& obj) {
     const int x = x_ + obj.x_;
@@ -99,28 +107,4 @@ class Vector3d : protected Vector2d {
  protected:
   double z_{0};
 };
-
-int main() {
-  Vector2d vector(10.0, 20.0);
-  Vector2d vector2(10.0, 20.0);
-  auto v3 = vector + vector2;
-  v3.print();
-  auto v4 = vector.operator-(vector2);
-  v4.print();
-  auto v5 = vector * 2.0;
-  v5.print();
-  auto v6 = vector / 2.0;
-  v6.print();
-
-  Vector3d vector3d(10.0, 20.0, 30.0);
-  Vector3d vector3d_2(10.0, 20.0, 30.0);
-  auto v7 = vector3d + vector3d_2;
-  v7.print();
-  auto v8 = vector3d - vector3d_2;
-  v8.print();
-  auto v9 = vector3d * 2.0;
-  v9.print();
-  auto v10 = vector3d / 2.0;
-  v10.print();
-  return 0;
-}
+}  // namespace chapter5::task3

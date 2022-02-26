@@ -8,11 +8,26 @@ Package contain tasks from book "С++ examples and tasks"
 
 Details information #TODO
 
+# Git hooks
+
+1. pre-commit
+2. commit message must contain Add: |Created: |Fix: |Update: |Rework:
+
+# Doxygen
+
+'''
+doxygen Doxyfile
+'''
+
 ## Installation
 
 ```
-sudo apt update
-sudo apt install ./package.deb
+mkdir build && cd build
+cmake -DBUILD_TESTS=ON ..
+cmake --build .
+ctest --output-on-failure
+cpack
+sudo apt install ./*.deb --reinstall
 ```
 
 ## License
